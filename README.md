@@ -1,69 +1,61 @@
-# Welcome to your Lovable project
 
-## Project info
+# Кроссы и точка - Интернет-магазин кроссовок
 
-**URL**: https://lovable.dev/projects/da637b09-72aa-4678-84e2-50f26304e6b0
+Веб-приложение для интернет-магазина кроссовок, разработанное на PHP и MySQL.
 
-## How can I edit this code?
+## Особенности
 
-There are several ways of editing your application.
+- Адаптивный дизайн с использованием Tailwind CSS
+- Каталог товаров с фильтрацией и сортировкой
+- Детальная страница товара с выбором размера и количества
+- Похожие товары на странице товара
+- Об интернет-магазине
 
-**Use Lovable**
+## Требования
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/da637b09-72aa-4678-84e2-50f26304e6b0) and start prompting.
+- PHP 7.4 или выше
+- MySQL 5.7 или выше
+- Веб-сервер (Apache, Nginx и т.д.)
 
-Changes made via Lovable will be committed automatically to this repo.
+## Установка
 
-**Use your preferred IDE**
+1. Клонируйте репозиторий на ваш веб-сервер:
+   ```bash
+   git clone https://github.com/username/sneaker-shop.git
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. Импортируйте структуру базы данных из файла `install.sql`:
+   ```bash
+   mysql -u username -p < install.sql
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+3. Настройте подключение к базе данных в файле `index.php`:
+   ```php
+   define('DB_SERVER', 'localhost'); // Ваш хост MySQL
+   define('DB_USERNAME', 'root');    // Ваше имя пользователя MySQL
+   define('DB_PASSWORD', '');        // Ваш пароль MySQL
+   define('DB_NAME', 'sneaker_shop'); // Имя базы данных
+   ```
 
-Follow these steps:
+4. Откройте сайт в браузере
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Структура проекта
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- `index.php` - Основной файл, маршрутизатор
+- `functions.php` - Вспомогательные функции и работа с базой данных
+- `header.php` - Шапка сайта
+- `footer.php` - Подвал сайта
+- `css/style.css` - Пользовательские стили
+- `pages/` - Страницы сайта
+  - `home.php` - Главная страница
+  - `catalog.php` - Каталог товаров
+  - `product.php` - Страница товара
+  - `about.php` - О нас
+  - `not_found.php` - Страница 404
+- `install.sql` - SQL-скрипт для создания структуры базы данных
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Дополнительная информация
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Весь дизайн сайта адаптивен и поддерживает мобильные устройства. Для стилизации используется Tailwind CSS через CDN.
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/da637b09-72aa-4678-84e2-50f26304e6b0) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Для отображения иконок используется библиотека Lucide.js.
